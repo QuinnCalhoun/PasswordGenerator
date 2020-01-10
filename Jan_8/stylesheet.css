@@ -1,0 +1,85 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*END OF CSS RESET APPLY CSS UNDER THIS COMMENT DO NOT EDIT ABOVE*/
+.background {
+	max-width: 1200px;
+	margin: auto;
+	height: 100vh;
+	background-color: #003366;
+}
+.nav-bar{
+	background-color: #8392ac;
+	text-align: center;
+}
+.nav-title {
+	text-decoration: none;
+	color: #003366;
+	font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
+	font-size: 12vw;
+	letter-spacing: .286em;
+}
+.content-box {
+	width: 80%;
+	margin: 5% auto;
+}
+.content-box p {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: .05em;
+	font-size: 1.2em;
+}
+.content-box h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: .05em;
+	font-size: 2.5em;
+}
