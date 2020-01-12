@@ -70,7 +70,7 @@ table {
 .content-box {
 	width: 80%;
 	margin: 5% auto;
-	padding: 5vw;
+	padding: 20vw 0;
 }
 .content-box p {
 	text-transform: uppercase;
