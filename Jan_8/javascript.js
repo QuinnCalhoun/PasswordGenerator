@@ -18,5 +18,11 @@ document.querySelector('#easyPass').addEventListener('click', function(){
         }
     console.log(realPass)
     console.log(realPass.join(''))
-    alert('Your Password is ' + realPass.join(''))
+    
+    var passBox = document.createElement('h1')
+    passBox.textContent = 'Your password is ' + realPass.join('')
+    document.querySelector('.content-box').appendChild(passBox)
     })  
+document.querySelector('#customPass').addEventListener('click', function() {
+
+})
