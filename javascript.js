@@ -72,7 +72,7 @@ document.querySelector('#customPass').addEventListener('click', function() {
     document.querySelector('.confirmer').disabled = true
     var lengthChoice = document.querySelector('.lengthInput').value
     console.log(lengthChoice)
-    if (parseInt(lengthChoice) > 7 && parseInt(lengthChoice) < 128) {
+    if (parseInt(lengthChoice) > 7 && parseInt(lengthChoice) < 129) {
         localStorage.setItem('passwordLength', lengthChoice)
         charChoices()
     }else {
