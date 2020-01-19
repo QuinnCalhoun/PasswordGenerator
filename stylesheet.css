@@ -135,6 +135,9 @@ table {
 input {
 	margin: auto;
 }
+#copyTarget {
+	overflow: auto;	
+}
 /* button {
 	background-color: #e7e7e7; 
 	color: black;
@@ -192,6 +195,7 @@ input {
 	.footer-link {
 		font-size: 2vw;
 	}
+	
 	}
 	@media only screen and (min-width: 650px) {
 		.nav-bar {
