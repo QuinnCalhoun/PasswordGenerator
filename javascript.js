@@ -164,7 +164,7 @@ document.querySelector('#customPass').addEventListener('click', function() {
             function makePass() {
                 var thankYou = document.createElement('h2')
                 thankYou.setAttribute('class', 'pClass')
-                thankYou.textContent = 'Thanks! Your password is '
+                thankYou.textContent = 'Thanks! Your password is: '
                 var targetArea = document.querySelector('.background')
                 targetArea.insertBefore(thankYou, targetArea.children[11])
 
@@ -214,7 +214,7 @@ document.querySelector('#customPass').addEventListener('click', function() {
                 }
                 console.log(finalForm)
                 var finalShow = document.createElement('h2')
-                finalShow.setAttribute('class', 'pClass')
+                finalShow.setAttribute('class', 'convenientClass')
                 finalShow.setAttribute('id', 'copyTarget')
                 finalShow.textContent = finalForm.join('')
                 var targetArea = document.querySelector('.background')
