@@ -36,9 +36,9 @@ document.querySelector('#easyPass').addEventListener('click', function(){
     })
 
 document.querySelector('#customPass').addEventListener('click', function() {
-    var passLength = 8
-    var charTypes = {letters:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', numbers:'0123456789', specialChar: '!@#$%^&*,.<>'}
-    console.log(charTypes)
+    // var passLength = 8
+    // var charTypes = {letters:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', numbers:'0123456789', specialChar: '!@#$%^&*,.<>'}
+    // console.log(charTypes)
 
     var newTitle = document.createElement('h1')
     newTitle.textContent = 'Lets Make a Password!'
@@ -124,22 +124,59 @@ document.querySelector('#customPass').addEventListener('click', function() {
 
             var confirm = document.createElement('input')
             confirm.setAttribute('type', 'submit')
-            confirm.setAttribute('class', 'confirm2')
+            confirm.setAttribute('class', 'confirm3')
             confirm.setAttribute('value', 'Yes')
             var targetArea = document.querySelector('.background')
             targetArea.insertBefore(confirm, targetArea.children[9])
         
             var negate = document.createElement('input')
             negate.setAttribute('type', 'submit')
-            negate.setAttribute('class', 'negater')
+            negate.setAttribute('class', 'negater2')
             negate.setAttribute('value', 'No')
             var targetArea = document.querySelector('.background')
             targetArea.insertBefore(negate, targetArea.children[10])
 
-            document.querySelector('.confirm2').addEventListener('click', function() {
+            document.querySelector('.confirm3').addEventListener('click', function() {
                 var yesSpecials = true
                 console.log(yesSpecials)
+                if (yesSpecials) {
+                    localStorage.setItem('Specials', 'true')
+                    makePass()
+                }
             })
+            document.querySelector('.negater2').addEventListener('click', function(){
+                var noSpecials = true
+                console.log(noSpecials)
+                if (noSpecials){
+                    localStorage.setItem('Specials', 'false')
+                    makePass()
+                }
+            })
+            function makePass() {
+                var thankYou = document.createElement('h2')
+                thankYou.setAttribute('class', 'pClass')
+                thankYou.textContent = 'Thanks! Your password is '
+                var targetArea = document.querySelector('.background')
+                targetArea.insertBefore(thankYou, targetArea.children[11])
+
+                var pL = localStorage.getItem('passwordLength')
+                console.log(pL)
+                var num = localStorage.getItem('Numbers')
+                console.log(num)
+                var spe = localStorage.getItem('Specials')
+                console.log(spe)
+                var fullPass = []
+                var usables2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+                console.log(usables2.length)
+                for (i = 0; i < pL; i++) {
+                    var digit2 = Math.floor(Math.random() * 52)
+                    fullPass.push(digit2)
+                    
+                }console.log(fullPass)
+
+
+                
+            }
 
             
 
