@@ -69,6 +69,7 @@ document.querySelector('#customPass').addEventListener('click', function() {
     targetArea.insertBefore(confirm, targetArea.children[4])
     
     document.querySelector('.confirmer').addEventListener('click', function() {
+    document.querySelector('.confirmer').disabled = true
     var lengthChoice = document.querySelector('.lengthInput').value
     console.log(lengthChoice)
     if (parseInt(lengthChoice) > 7 && parseInt(lengthChoice) < 128) {
@@ -104,6 +105,8 @@ document.querySelector('#customPass').addEventListener('click', function() {
             if (yesNumbers == true) {
             localStorage.setItem('Numbers', 'true')
             charChoices2()
+            document.querySelector('.confirm2').disabled = true
+            document.querySelector('.negater').disabled = true
         }
         })
         document.querySelector('.negater').addEventListener('click', function(){
@@ -112,6 +115,8 @@ document.querySelector('#customPass').addEventListener('click', function() {
             if (noNumbers == true) {
             localStorage.setItem('Numbers', 'false')
             charChoices2()
+            document.querySelector('.confirm2').disabled = true
+            document.querySelector('.negater').disabled = true
         }
         })
         
@@ -143,6 +148,8 @@ document.querySelector('#customPass').addEventListener('click', function() {
                     localStorage.setItem('Specials', 'true')
                     makePass()
                 }
+                document.querySelector('.confirm3').disabled = true
+                document.querySelector('.negater2').disabled = true
             })
             document.querySelector('.negater2').addEventListener('click', function(){
                 var noSpecials = true
@@ -151,6 +158,8 @@ document.querySelector('#customPass').addEventListener('click', function() {
                     localStorage.setItem('Specials', 'false')
                     makePass()
                 }
+                document.querySelector('.confirm3').disabled = true
+                document.querySelector('.negater2').disabled = true
             })
             function makePass() {
                 var thankYou = document.createElement('h2')
@@ -159,22 +168,81 @@ document.querySelector('#customPass').addEventListener('click', function() {
                 var targetArea = document.querySelector('.background')
                 targetArea.insertBefore(thankYou, targetArea.children[11])
 
-                var pL = localStorage.getItem('passwordLength')
+
+
+                var numNum = ['0','1','2','3','4','5','6','7','8','9']
+                var charChar = [',','.','!','@','#','$','%','^','&','*','(',')']
+                var pL = JSON.parse(localStorage.getItem('passwordLength'))
                 console.log(pL)
                 var num = localStorage.getItem('Numbers')
                 console.log(num)
                 var spe = localStorage.getItem('Specials')
                 console.log(spe)
-                var fullPass = []
-                var usables2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-                console.log(usables2.length)
+                var usables2 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+                
+                if (num == 'true') {
+                for (x =0; x < numNum.length; x++) {
+                    usables2.push(numNum[x])
+                }}else {
+                    usables2 = usables2
+                }
+                console.log(usables2)
+
+                if (spe == 'true') {
+                    for (i = 0; i < charChar.length; i++) {
+                        usables2.push(charChar[i])
+                    }
+                }else {
+                    usables2 = usables2
+                }
+                console.log(usables2)
+
+                var thisIsIt = []
+
                 for (i = 0; i < pL; i++) {
-                    var digit2 = Math.floor(Math.random() * 52)
-                    fullPass.push(digit2)
-                    
-                }console.log(fullPass)
+                    var digit2 = Math.floor(Math.random() * usables2.length)
+                    console.log(digit2)
+                    thisIsIt.push(digit2)
+                }
+                console.log(thisIsIt)
 
+                var finalForm = []
 
+                for (i = 0; i < thisIsIt.length; i++) {
+                    var pleaseGod2 = usables2[thisIsIt[i]]
+                    finalForm.push(pleaseGod2)
+                }
+                console.log(finalForm)
+                var finalShow = document.createElement('h2')
+                finalShow.setAttribute('class', 'pClass')
+                finalShow.setAttribute('id', 'copyTarget')
+                finalShow.textContent = finalForm.join('')
+                var targetArea = document.querySelector('.background')
+                targetArea.insertBefore(finalShow, targetArea.children[12])
+
+                var copyPass = document.createElement('input')
+                copyPass.setAttribute('type', 'submit')
+                copyPass.setAttribute('value', 'Copy Password to Clipboard')
+                var targetArea = document.querySelector('.background')
+                targetArea.insertBefore(copyPass, targetArea.children[13])
+
+                var resetFinal = document.createElement('input')
+                resetFinal.setAttribute('type', 'submit')
+                resetFinal.setAttribute('value', 'Reset')
+                var targetArea = document.querySelector('.background')
+                targetArea.insertBefore(resetFinal, targetArea.children[14])
+
+                copyPass.addEventListener('click', function() {
+                    var copyText = document.getElementById("copyTarget");
+                    copyText.select();
+                    document.execCommand("copy");
+                  })
+
+                resetFinal.addEventListener('click', function(){
+                    location.reload()
+                })
+                
+                 
                 
             }
 
