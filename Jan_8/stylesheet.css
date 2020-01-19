@@ -53,6 +53,7 @@ table {
 	margin: auto;
 	height: 100vh;
 	background-color: #003366;
+	text-align: center;
 }
 .nav-bar{
 	background-color: #D3D3D3;
@@ -73,7 +74,7 @@ table {
 	margin: 5% auto;
 	padding: 20vw 0;
 }
-.content-box p {
+.pClass {
 	text-transform: uppercase;
 	text-align: center;
 	font-family: 'Anton', sans-serif;
@@ -83,7 +84,7 @@ table {
 	color: #D3D3D3;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.content-box h1 {
+.convenientClass {
 	text-transform: uppercase;
 	text-align: center;
 	font-family: 'Anton', sans-serif;
@@ -130,6 +131,9 @@ table {
 	margin: 0 5%;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 	
+}
+input {
+	margin: auto;
 }
 /* button {
 	background-color: #e7e7e7; 
