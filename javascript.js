@@ -39,6 +39,7 @@ document.querySelector('#customPass').addEventListener('click', function() {
     // var passLength = 8
     // var charTypes = {letters:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', numbers:'0123456789', specialChar: '!@#$%^&*,.<>'}
     // console.log(charTypes)
+    if (document.querySelector('#customPass').textContent === 'Custom Password') {
 
     var newTitle = document.createElement('h1')
     newTitle.textContent = 'Lets Make a Password!'
@@ -69,13 +70,14 @@ document.querySelector('#customPass').addEventListener('click', function() {
     targetArea.insertBefore(confirm, targetArea.children[4])
     
     document.querySelector('.confirmer').addEventListener('click', function() {
-    document.querySelector('.confirmer').disabled = true
-    var lengthChoice = document.querySelector('.lengthInput').value
-    console.log(lengthChoice)
-    if (parseInt(lengthChoice) > 7 && parseInt(lengthChoice) < 129) {
+        var lengthChoice = document.querySelector('.lengthInput').value
+        console.log(lengthChoice)
+        if (parseInt(lengthChoice) > 7 && parseInt(lengthChoice) < 129) {
+        document.querySelector('.confirmer').disabled = true
         localStorage.setItem('passwordLength', lengthChoice)
         charChoices()
     }else {
+        alert('Must input numerals. (1, 2, 3, etc...')
         return
     }
     function charChoices() {
@@ -252,6 +254,6 @@ document.querySelector('#customPass').addEventListener('click', function() {
         
         
     }
-})
+})}
 })
 
