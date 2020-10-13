@@ -55,7 +55,7 @@
           let choice = Math.floor(Math.random() * (letters.length))
           generatedPassword.push(letters[choice])
           //this next if sets a 25% weight for other characters as a baseline.
-        } if (i > Math.floor(passLength * .5) && i < Math.ceil(passLength * .75)) {
+        } if (i > Math.floor(passLength * .5) && i <= Math.ceil(passLength * .75)) {
           //this if-else just ensures that other characters are included, and if not just adds more letters instead.
           if (options.includes(otherChar)) {
             console.log('We are including others')
